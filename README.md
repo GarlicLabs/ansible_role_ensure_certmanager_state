@@ -1,20 +1,24 @@
 # ensure_certmanager_state
 
-[![Validate infrastructure as code](https://github.com/garliclabs/ensure_certmanager_state/actions/workflows/validation.yml/badge.svg)](https://github.com/garliclabs/ensure_certmanager_state/actions/workflows/validation.yml)
+[![Validate infrastructure as code](https://github.com/garliclabs/ansible_role_ensure_certmanager_state/actions/workflows/validation.yml/badge.svg)](https://github.com/garliclabs/ansible_role_ensure_certmanager_state/actions/workflows/validation.yml)
 
-TODO description
+Manages the state of a certmanager deployment in your kubernetes cluster via helm.
+This role does not create custom CRDs for certmanager, for this please take a look on [ansible_role_configure_certmanager](https://github.com/GarlicLabs/ansible_role_configure_certmanager)
 
 ## Requirements
 
-TODO
+Kubernetes, Helm
 
 ## Role Variables
 
-TODO
+```bash
+certmanager_kubeconfig: "{{ undef(hint='Specify your kubeconfig location') }}"
+certmanager_state: present
+certmanager_namespace: default
+certmanager_chart_version: v1.13.3
+```
 
 ## Development
-
-TODO
 
 ### Testing
 
@@ -31,10 +35,6 @@ Both the linter and the static security analyser are running on each push on the
 
 * To check if there are any passwords, tokens... hardcoded, [kics](https://kics.io/index.html) is used to ensure a secure IaC repository.  
   * Run it locally `docker run -t -v $PWD:/path checkmarx/kics:latest scan -p /path -o "/path/"`
-
-## Dependencies
-
-None.
 
 ## License
 
