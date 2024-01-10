@@ -1,0 +1,6 @@
+---
+
+certmanager_kubeconfig: "{{ undef(hint='Specify your kubeconfig location') }}"
+certmanager_state: present
+certmanager_namespace: default
+certmanager_chart_version: v1.13.3
