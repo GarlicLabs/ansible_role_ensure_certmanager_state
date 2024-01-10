@@ -7,4 +7,4 @@
   tasks:
     - name: "Include garliclabs.ensure_certmanager_state"
       ansible.builtin.include_role:
-        name: "ansible_role_ensure_certmanager_state"
+        name: "ensure_certmanager_state"
