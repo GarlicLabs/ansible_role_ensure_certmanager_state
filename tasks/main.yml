@@ -13,8 +13,6 @@
     wait: false
     values:
       installCRDs: true
-  become: true
-  become_user: "{{ ansible_user }}"
 
 - name: Wait till certmanager is running
   tags: notest
@@ -29,6 +27,4 @@
     - cert-manager
     - cert-manager-cainjector
     - cert-manager-webhook
-  become: true
-  become_user: "{{ ansible_user }}"
   when: certmanager_state == "present"
