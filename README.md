@@ -12,11 +12,16 @@ Kubernetes, Helm
 ## Role Variables
 
 ```bash
-certmanager_kubeconfig: "{{ undef(hint='Specify your kubeconfig location') }}"
-certmanager_state: present
-certmanager_namespace: default
-certmanager_chart_version: v1.13.3
+certmanager_kubeconfig
+certmanager_state
+certmanager_namespace
+certmanager_chart_version
 ```
+
+**certmanager_kubeconfig:** Specify the path to your kubeconfig, so the role can deploy to your kubernetes cluster
+**certmanager_state:** State of the certmanager deployment can be either present or absent
+**certmanager_namespace:** Namespace in that the certmanager will be deployed
+**certmanager_chart_version:** Version of the chart that will be deployed
 
 ## Development
 
